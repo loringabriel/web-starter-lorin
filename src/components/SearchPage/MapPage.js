@@ -10,15 +10,13 @@ class MapContainer extends React.Component {
     }
 
     return (
-      <div style={style}>
-        <Map
+        <Map style={style}
           google={this.props.google} zoom={14}>
           {this.props.coordsArray.map((coord, index) =>
             <Marker key={index} position={coord}>
             </Marker>
           )}
         </Map>
-      </div>
     );
   };
 }
