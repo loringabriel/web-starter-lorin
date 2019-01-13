@@ -6,6 +6,7 @@ import { RESTAURANT_SEARCH_QUERY } from '../../graphql/queries';
 import { MapPage } from './MapPage';
 import { RestTile } from './RestTile';
 import { LocationSearch } from './LocationSearch';
+import { MyLocation } from './MyLocation';
 import Grid from '@material-ui/core/Grid';
 
 class SearchPage extends Component {
@@ -13,8 +14,11 @@ class SearchPage extends Component {
     super();
     
     this.updateLocation = this.updateLocation.bind(this);
+    this.receivedLocation = this.receivedLocation.bind(this);
     this.state = {
-      'address': 'Chicago'
+      address: 'Chicago',
+      lat: null,
+      lon: null
     }
   }
 
@@ -23,8 +27,21 @@ class SearchPage extends Component {
     console.log(value);
 
     this.setState({
-      'address': value
+      lat: null,
+      lon: null,
+      address: value
     });
+  }
+
+  receivedLocation(value) {
+    console.log("Location received");
+    console.log(value);
+
+    this.setState({
+      address: '',
+      lat: value.lat,
+      lon: value.lng
+    })
   }
 
   render() {
@@ -60,6 +77,7 @@ class SearchPage extends Component {
               <Grid container>
                 <Grid item xs={12} style={{ height: '100px'}}>
                   <LocationSearch value={this.state.address} callback={this.updateLocation}></LocationSearch>
+                  <MyLocation receivedLocation={this.receivedLocation}></MyLocation>
                 </Grid>
 
                 <Grid item xs={4} style={{height: 'calc(100vh - 100px)', overflowY: 'scroll'}}>
