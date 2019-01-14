@@ -6,6 +6,10 @@ import RestPage from './components/RestPage';
 
 import * as ROUTES from './utils/routes';
 import './App.css';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faMapMarkerAlt, faStar, faWalking, faCircle } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faMapMarkerAlt, faStar, faWalking, faCircle);
 
 class App extends Component {
   render() {

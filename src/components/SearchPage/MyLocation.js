@@ -13,12 +13,6 @@ export class MyLocation extends React.Component {
         if (navigator && navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((pos) => {
                 const coords = pos.coords;
-                // this.setState({
-                //     currentLocation: {
-                //         lat: coords.latitude,
-                //         lng: coords.longitude
-                //     }
-                // })
                 this.props.receivedLocation({
                     lat: coords.latitude,
                     lng: coords.longitude

@@ -1,26 +1,49 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import Grid from '@material-ui/core/Grid';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const RestTile = (props) => {
     return (
         <div style={{ padding: '30px' }}>
-            <Grid container spacing={24}>
-                <Grid item xs={11} style={{ background: 'white', border: '1px solid grey', borderRadius: '6px' }}>
-                    <div style={{ padding: '10px' }}><Link to={`/rest/${props.rest.id}`}>{props.rest.title}</Link></div>
-                    <div style={{ padding: '10px' }}>{props.rest.cuisine}</div>
+            <Grid container spacing={24} style={{ background: 'white', height: '120px', boxShadow: '1px 1px 0 0 #ccc', borderRadius: '12px' }}>
+                <Grid item xs={9}>
+                    <div style={{ padding: '10px', paddingBottom: '3px' }}><FontAwesomeIcon style={{ color: '#558BF7' }} icon="map-marker-alt" />
+                        <Link style={{ textDecoration: 'none' }} to={`/rest/${props.rest.id}`}>
+                            <span style={{ fontSize: '18px', fontWeight: '500', color: 'black' }}> {props.rest.title}</span>
+                        </Link>
+                    </div>
+
+                    <div style={{ padding: '10px', paddingTop: '0px', color: '#558BF7', fontWeight: '400' }}>{props.rest.cuisine}</div>
+                    {
+                        props.rest.references && props.rest.references.length > 0 ?
+                            <div style={{ padding: '10px' }}>
+                                <FontAwesomeIcon icon="star" />  Featured in {props.rest.references[0].site_name}
+                                {props.rest.references.length > 1 ?
+                                    <span>.. +{props.rest.references.length - 1}</span>
+                                    : ''
+                                }
+                            </div> : ''
+                    }
                 </Grid>
-                <Grid item xs={1} style={{ padding: '0px' }}>
-                    <img style={{ width: '100%', float: 'right' }} src={props.rest.images ? props.rest.images[0] : ''} />
-                </Grid>
+                {props.rest.images && props.rest.images.length > 0 ?
+                    <Grid item xs={3} style={{ padding: '0px' }}>
+                        <img style={{ height: '100%', width: '100%', float: 'right', borderRadius: '0 12px 12px 0' }} src={props.rest.images[0]} />
+                    </Grid>
+                    : ''
+                }
             </Grid>
-            <Grid container>
-                <Grid item xs={6}>
-                    <div>{props.rest.open_closed}</div>
+            <Grid container spacing={24} style={{ paddingTop: '10px' }}>
+                <Grid item xs={8} style={{ color: '#558BF7', lineHeight: '20px' }}>
+                    <span>{props.rest.open_closed}</span>
+                    <FontAwesomeIcon style={{fontSize: '4px', padding: '4px 12px 4px 12px'}} icon="circle" />
+                    <span>3.3 miles away</span>
                 </Grid>
-                <Grid item xs={6}>
-                    <div>{props.rest.rating}</div>
+                <Grid item xs={4}>
+                    <span style={{fontSize: '18px', fontWeight: 'bold'}}><FontAwesomeIcon  style={{ color: '#558BF7' }} icon="walking" /> 12</span>
+                    <span style={{fontSize: '14px'}}>min</span>
+                    <span style={{float: 'right', fontSize: '14px', lineHeight: '20px'}}>/5</span>
+                    <span style={{float: 'right', fontSize: '18px', fontWeight: 'bold', lineHeight: '20px'}}><FontAwesomeIcon  style={{ color: '#558BF7' }} icon="star" /> {props.rest.rating}</span>
                 </Grid>
             </Grid>
         </div>

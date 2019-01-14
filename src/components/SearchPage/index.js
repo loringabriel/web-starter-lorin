@@ -74,7 +74,7 @@ class SearchPage extends Component {
             && data.search_restaurants.results.length > 0
           ) {
             return (
-              <Grid container>
+              <Grid container style={{backgroundColor: '#E9F0F9'}}>
                 <Grid item xs={12} style={{ height: '100px'}}>
                   <LocationSearch value={this.state.address} callback={this.updateLocation}></LocationSearch>
                   <MyLocation receivedLocation={this.receivedLocation}></MyLocation>
