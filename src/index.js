@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import moment from 'moment';
 
 import './index.css';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 import { ApolloProvider } from 'react-apollo';
@@ -42,11 +42,11 @@ moment.updateLocale('en', {
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
-    <BrowserRouter>
+    <HashRouter>
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
-    </BrowserRouter>
+    </HashRouter>
   </MuiThemeProvider>,
   document.getElementById('root')
 );
