@@ -1,16 +1,16 @@
 {
   "main.css": "/web-starter/static/css/main.24ea0362.chunk.css",
-  "main.js": "/web-starter/static/js/main.b959e548.chunk.js",
-  "main.js.map": "/web-starter/static/js/main.b959e548.chunk.js.map",
+  "main.js": "/web-starter/static/js/main.92f626f6.chunk.js",
+  "main.js.map": "/web-starter/static/js/main.92f626f6.chunk.js.map",
   "static/css/1.5ff6375f.chunk.css": "/web-starter/static/css/1.5ff6375f.chunk.css",
-  "static/js/1.71ffbbfb.chunk.js": "/web-starter/static/js/1.71ffbbfb.chunk.js",
-  "static/js/1.71ffbbfb.chunk.js.map": "/web-starter/static/js/1.71ffbbfb.chunk.js.map",
+  "static/js/1.635af816.chunk.js": "/web-starter/static/js/1.635af816.chunk.js",
+  "static/js/1.635af816.chunk.js.map": "/web-starter/static/js/1.635af816.chunk.js.map",
   "runtime~main.js": "/web-starter/static/js/runtime~main.754e653e.js",
   "runtime~main.js.map": "/web-starter/static/js/runtime~main.754e653e.js.map",
-  "static/media/index.css": "/web-starter/static/media/roboto-latin-500italic.510dec37.woff2",
-  "static/css/1.5ff6375f.chunk.css.map": "/web-starter/static/css/1.5ff6375f.chunk.css.map",
+  "static/media/index.css": "/web-starter/static/media/roboto-latin-900italic.bc833e72.woff",
   "static/css/main.24ea0362.chunk.css.map": "/web-starter/static/css/main.24ea0362.chunk.css.map",
+  "static/css/1.5ff6375f.chunk.css.map": "/web-starter/static/css/1.5ff6375f.chunk.css.map",
   "index.html": "/web-starter/index.html",
-  "precache-manifest.9b4deb6a1e8f560a73b7c268041e5c95.js": "/web-starter/precache-manifest.9b4deb6a1e8f560a73b7c268041e5c95.js",
+  "precache-manifest.a942325aafc9067c94cb2d5c4fa848b4.js": "/web-starter/precache-manifest.a942325aafc9067c94cb2d5c4fa848b4.js",
   "service-worker.js": "/web-starter/service-worker.js"
 }
