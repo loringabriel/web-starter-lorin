@@ -1,6 +1,7 @@
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import React from 'react';
 import { Button } from '@material-ui/core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class MyLocation extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ export class MyLocation extends React.Component {
     }
 
     render() {
-        return <Button onClick={this.getLocation}>Use my location</Button>
+        return <Button style={{ 'background': 'linear-gradient(to left,#D98248, #EBBE71)', padding: '6px 36px', borderRadius: '20px', height: '40px', textTransform: 'none', color: 'white'}} onClick={this.getLocation}>
+                  <FontAwesomeIcon style={{ padding: '4px' }} icon="map-marker-alt" /> Use my location</Button>
     }
 }

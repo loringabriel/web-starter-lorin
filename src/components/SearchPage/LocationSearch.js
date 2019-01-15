@@ -1,8 +1,40 @@
 import React from 'react';
 import { TextField } from '@material-ui/core';
 
-export class LocationSearch extends React.Component {
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import DirectionsIcon from '@material-ui/icons/Directions';
 
+export class LocationSearch extends React.Component {
+    styles() {
+        return {
+            root: {
+                padding: '2px 4px',
+                display: 'flex',
+                alignItems: 'center',
+                width: 400,
+                height: '40px',
+                borderRadius: '20px',
+                marginLeft: '20px'
+            },
+            input: {
+                marginLeft: 8,
+                flex: 1,
+            },
+            iconButton: {
+                padding: 10,
+            },
+            divider: {
+                width: 1,
+                height: 28,
+                margin: 4,
+            },
+        }
+    }
     constructor(props) {
         super(props);
 
@@ -25,15 +57,16 @@ export class LocationSearch extends React.Component {
     render() {
         return (
             <form onSubmit={this.searchCallback}>
-                <TextField
-                    id="outlined-uncontrolled"
-                    label="Search"
-                    margin="normal"
-                    variant="outlined"
-                    value={this.state.value} onChange={this.handleChange}
-                />
+                <Paper className='root' elevation={1}>
+                    <IconButton className='iconButton' aria-label="Menu">
+                        <MenuIcon />
+                    </IconButton>
+                    <InputBase className='input' placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                    <IconButton className='iconButton' type='submit' aria-label="Search">
+                        <SearchIcon />
+                    </IconButton>
+                </Paper>
 
-                <input type="submit" value="Submit" />
             </form>
         )
     }

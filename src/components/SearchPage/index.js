@@ -12,7 +12,7 @@ import Grid from '@material-ui/core/Grid';
 class SearchPage extends Component {
   constructor() {
     super();
-    
+
     this.updateLocation = this.updateLocation.bind(this);
     this.receivedLocation = this.receivedLocation.bind(this);
     this.state = {
@@ -74,22 +74,25 @@ class SearchPage extends Component {
             && data.search_restaurants.results.length > 0
           ) {
             return (
-              <Grid container style={{backgroundColor: '#E9F0F9'}}>
-                <Grid item xs={12} style={{ height: '100px'}}>
-                  <LocationSearch value={this.state.address} callback={this.updateLocation}></LocationSearch>
-                  <MyLocation receivedLocation={this.receivedLocation}></MyLocation>
-                </Grid>
-
-                <Grid item xs={4} style={{height: 'calc(100vh - 100px)', overflowY: 'scroll'}}>
-                {data.search_restaurants.results.map((r) => {
-                return <RestTile key={r.id} rest={r}></RestTile>
-              })}
-                
-                </Grid>
-                <Grid item xs={8}  style={{height: 'calc(100vh - 100px)'}}>
-                <div style={{position: 'relative',width: '100%', height: '100%'}}>
-                <MapPage coordsArray={coordsArray}></MapPage>
+              <Grid container style={{ backgroundColor: '#E9F0F9' }}>
+                <div style={{ position: 'absolute', left: '45%', zIndex: 1024 }}>
+                  <div style={{ float: 'left', display: 'inlineBlock' }} >
+                    <MyLocation receivedLocation={this.receivedLocation}></MyLocation>
+                  </div>
+                  <div style={{ float: 'left', display: 'inlineBlock' }} >
+                    <LocationSearch value={this.state.address} callback={this.updateLocation}></LocationSearch>
+                  </div>
                 </div>
+                <Grid item xs={4} style={{ height: '100%', overflowY: 'scroll' }}>
+                  {data.search_restaurants.results.map((r) => {
+                    return <RestTile key={r.id} rest={r}></RestTile>
+                  })}
+
+                </Grid>
+                <Grid item xs={8}>
+                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <MapPage coordsArray={coordsArray}></MapPage>
+                  </div>
                 </Grid>
 
               </Grid>
