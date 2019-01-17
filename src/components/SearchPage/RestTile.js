@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 export const RestTile = (props) => {
     return (
         <div style={{ padding: '30px' }}>
-            <Grid container spacing={24} style={{ background: 'white', height: '120px', boxShadow: '1px 1px 0 0 #ccc', borderRadius: '12px' }}>
+            <Grid container spacing={24} style={{ background: 'white', boxShadow: '1px 1px 0 0 #ccc', borderRadius: '12px' }}>
                 <Grid item xs={9}>
                     <div style={{ padding: '10px', paddingBottom: '3px' }}><FontAwesomeIcon style={{ color: '#558BF7' }} icon="map-marker-alt" />
                         <Link style={{ textDecoration: 'none' }} to={`/rest/${props.rest.id}`}>
@@ -36,14 +36,19 @@ export const RestTile = (props) => {
             <Grid container spacing={24} style={{ paddingTop: '10px' }}>
                 <Grid item xs={8} style={{ color: '#558BF7', lineHeight: '20px' }}>
                     <span>{props.rest.open_closed}</span>
-                    <FontAwesomeIcon style={{fontSize: '4px', padding: '4px 12px 4px 12px'}} icon="circle" />
+                    <FontAwesomeIcon style={{ fontSize: '4px', padding: '4px 12px 4px 12px' }} icon="circle" />
                     <span>3.3 miles away</span>
                 </Grid>
                 <Grid item xs={4}>
-                    <span style={{fontSize: '18px', fontWeight: 'bold'}}><FontAwesomeIcon  style={{ color: '#558BF7' }} icon="walking" /> 12</span>
-                    <span style={{fontSize: '14px'}}>min</span>
-                    <span style={{float: 'right', fontSize: '14px', lineHeight: '20px'}}>/5</span>
-                    <span style={{float: 'right', fontSize: '18px', fontWeight: 'bold', lineHeight: '20px'}}><FontAwesomeIcon  style={{ color: '#558BF7' }} icon="star" /> {props.rest.rating}</span>
+                    <div style={{ display: 'inline-block' }}>
+
+                        <span style={{ fontSize: '18px', fontWeight: 'bold' }}><FontAwesomeIcon style={{ color: '#558BF7' }} icon="walking" /> 12</span>
+                        <span style={{ fontSize: '14px' }}>min</span>
+                    </div>
+                    <div style={{ display: 'inline-block', float: "right" }}>
+                        <span style={{ fontSize: '18px', fontWeight: 'bold', lineHeight: '20px' }}><FontAwesomeIcon style={{ color: '#558BF7' }} icon="star" /> {props.rest.rating}</span>
+                        <span style={{ fontSize: '14px', lineHeight: '20px' }}>/5</span>
+                    </div>
                 </Grid>
             </Grid>
         </div>

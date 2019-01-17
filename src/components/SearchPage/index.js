@@ -8,10 +8,31 @@ import { RestTile } from './RestTile';
 import { LocationSearch } from './LocationSearch';
 import { MyLocation } from './MyLocation';
 import Grid from '@material-ui/core/Grid';
+import Hidden from '@material-ui/core/Hidden';
+import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
+
+const styles = theme => ({
+  header: {
+    [theme.breakpoints.down('sm')]: {
+      left: '0%'
+    },
+    [theme.breakpoints.up('sm')]: {
+      left: '45%'
+    },
+    position: 'absolute',
+    zIndex: 1024
+  },
+  tiles: {
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '100px'
+    }
+  }
+});
 
 class SearchPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.updateLocation = this.updateLocation.bind(this);
     this.receivedLocation = this.receivedLocation.bind(this);
@@ -44,7 +65,7 @@ class SearchPage extends Component {
     })
   }
 
-  render() {
+  render() {  
     return (
       // Variables can be either lat and lon OR address
       <Query
@@ -75,7 +96,7 @@ class SearchPage extends Component {
           ) {
             return (
               <Grid container style={{ backgroundColor: '#E9F0F9' }}>
-                <div style={{ position: 'absolute', left: '45%', zIndex: 1024 }}>
+                <div className={this.props.classes.header}>
                   <div style={{ float: 'left', display: 'inlineBlock' }} >
                     <MyLocation receivedLocation={this.receivedLocation}></MyLocation>
                   </div>
@@ -83,17 +104,19 @@ class SearchPage extends Component {
                     <LocationSearch value={this.state.address} callback={this.updateLocation}></LocationSearch>
                   </div>
                 </div>
-                <Grid item xs={4} style={{ height: '100%', overflowY: 'scroll' }}>
+                <Grid className={this.props.classes.tiles} item sm={4} xs={12} style={{ height: '100%', overflowY: 'scroll' }}>
                   {data.search_restaurants.results.map((r) => {
                     return <RestTile key={r.id} rest={r}></RestTile>
                   })}
 
                 </Grid>
-                <Grid item xs={8}>
-                  <div style={{ position: 'relative', width: '100%', height: '100%' }}>
-                    <MapPage coordsArray={coordsArray}></MapPage>
-                  </div>
-                </Grid>
+                <Hidden xsDown>
+                  <Grid item sm={8}>
+                    <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+                      <MapPage coordsArray={coordsArray}></MapPage>
+                    </div>
+                  </Grid>
+                </Hidden>
 
               </Grid>
             );
@@ -107,4 +130,9 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+SearchPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+
+export default withStyles(styles)(SearchPage);
