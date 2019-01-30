@@ -24,5 +24,4 @@ export const RestTile = (props) => {
             </Row>
         </div>
     );
-
-} 
+}  
