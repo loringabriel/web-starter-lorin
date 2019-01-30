@@ -1,16 +1,16 @@
 {
   "main.css": "/web-starter/static/css/main.5f2c7d2d.chunk.css",
-  "main.js": "/web-starter/static/js/main.00cdeed1.chunk.js",
-  "main.js.map": "/web-starter/static/js/main.00cdeed1.chunk.js.map",
+  "main.js": "/web-starter/static/js/main.925a8852.chunk.js",
+  "main.js.map": "/web-starter/static/js/main.925a8852.chunk.js.map",
   "static/css/1.d8165a5f.chunk.css": "/web-starter/static/css/1.d8165a5f.chunk.css",
-  "static/js/1.f75641c0.chunk.js": "/web-starter/static/js/1.f75641c0.chunk.js",
-  "static/js/1.f75641c0.chunk.js.map": "/web-starter/static/js/1.f75641c0.chunk.js.map",
+  "static/js/1.9b4c07fa.chunk.js": "/web-starter/static/js/1.9b4c07fa.chunk.js",
+  "static/js/1.9b4c07fa.chunk.js.map": "/web-starter/static/js/1.9b4c07fa.chunk.js.map",
   "runtime~main.js": "/web-starter/static/js/runtime~main.754e653e.js",
   "runtime~main.js.map": "/web-starter/static/js/runtime~main.754e653e.js.map",
   "static/media/index.css": "/web-starter/static/media/roboto-latin-900italic.bc833e72.woff",
   "static/css/main.5f2c7d2d.chunk.css.map": "/web-starter/static/css/main.5f2c7d2d.chunk.css.map",
   "static/css/1.d8165a5f.chunk.css.map": "/web-starter/static/css/1.d8165a5f.chunk.css.map",
   "index.html": "/web-starter/index.html",
-  "precache-manifest.d6b13d57e416aac13c365d4c6a606fbf.js": "/web-starter/precache-manifest.d6b13d57e416aac13c365d4c6a606fbf.js",
+  "precache-manifest.0f848275458566f3ffd72c8f71d4f97c.js": "/web-starter/precache-manifest.0f848275458566f3ffd72c8f71d4f97c.js",
   "service-worker.js": "/web-starter/service-worker.js"
 }
